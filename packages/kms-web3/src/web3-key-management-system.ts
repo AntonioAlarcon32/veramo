@@ -1,6 +1,8 @@
 import { JsonRpcSigner, BrowserProvider, toUtf8String } from 'ethers'
 import { TKeyType, IKey, ManagedKeyInfo, MinimalImportableKey } from '@veramo/core-types'
 import { AbstractKeyManagementSystem, Eip712Payload } from '@veramo/key-manager'
+import { decodeBase64url } from '../../utils/src' 
+import { ethTypedDataSigner } from 'did-jwt-eth-typed-data-signature'
 
 /**
  * This is a {@link @veramo/key-manager#AbstractKeyManagementSystem | KMS} implementation that uses the addresses of a
@@ -32,7 +34,7 @@ export class Web3KeyManagementSystem extends AbstractKeyManagementSystem {
       const accounts = await this.providers[provider].listAccounts()
       for (const account of accounts) {
         const key: ManagedKeyInfo = {
-          kid: `${provider}-${account}`,
+          kid: `${provider}-${account.address}`,
           type: 'Secp256k1',
           publicKeyHex: '',
           kms: '',
@@ -83,8 +85,8 @@ export class Web3KeyManagementSystem extends AbstractKeyManagementSystem {
     if (algorithm) {
       if (algorithm === 'eth_signMessage') {
         return await this.eth_signMessage(keyRef, data)
-      } else if (['eth_signTypedData', 'EthereumEip712Signature2021'].includes(algorithm)) {
-        return await this.eth_signTypedData(keyRef, data)
+      } else if (['eth_signTypedData', 'EthereumEip712Signature2021', 'EthTypedData'].includes(algorithm)) {
+        return await this.eth_signTypedData(keyRef, data, algorithm)
       }
     }
 
@@ -94,9 +96,20 @@ export class Web3KeyManagementSystem extends AbstractKeyManagementSystem {
   /**
    * @returns a `0x` prefixed hex string representing the signed EIP712 data
    */
-  private async eth_signTypedData(keyRef: Pick<IKey, 'kid'>, data: Uint8Array) {
+  private async eth_signTypedData(keyRef: Pick<IKey, 'kid'>, data: Uint8Array, algorithm?: string) {
     let msg, msgDomain, msgTypes, msgPrimaryType
-    const serializedData = toUtf8String(data)
+    let serializedData = toUtf8String(data)
+    if (algorithm === 'EthTypedData') {
+        const { signer } = await this.getAccountAndSignerByKeyRef(keyRef)
+        //@ts-expect-error
+        const eip712Web3Signer  = ethTypedDataSigner(signer)
+        // const signature = await signer.signTypedData(msgDomain, msgTypes, msg)
+        const signature = await eip712Web3Signer(data)
+        if (typeof signature !== 'string') {
+          throw Error(`invalid_signature: ${signature}`)
+        }
+        return signature
+      }
     try {
       const jsonData = JSON.parse(serializedData) as Eip712Payload
       if (typeof jsonData.domain === 'object' && typeof jsonData.types === 'object') {

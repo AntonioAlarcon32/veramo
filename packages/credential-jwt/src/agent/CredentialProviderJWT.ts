@@ -26,6 +26,8 @@ import {
   pickSigningKey,
   processEntryToArray,
   removeDIDParameters,
+  getChainId,
+  mapIdentifierKeysToDoc
 } from '@veramo/utils'
 import { AbstractCredentialProvider } from '@veramo/credential-w3c'
 
@@ -41,8 +43,10 @@ import {
 } from 'did-jwt-vc'
 import { Resolvable } from 'did-resolver'
 
-import { decodeJWT } from 'did-jwt'
+import { getEthTypesFromInputDoc } from 'eip-712-types-generation'
 
+import { decodeJWT, AddSigningAlgorithm, AddVerifierAlgorithm } from 'did-jwt'
+import {EthTypedDataSignerAlgorithm, validSignatures, verifyEthTypedDataSignature} from 'did-jwt-eth-typed-data-signature'
 import Debug from 'debug'
 const debug = Debug('veramo:credential-jwt:agent')
 
@@ -52,6 +56,12 @@ const debug = Debug('veramo:credential-jwt:agent')
  * @beta This API may change without a BREAKING CHANGE notice.
  */
 export class CredentialProviderJWT implements AbstractCredentialProvider {
+
+  constructor() {
+    console.log('CredentialProviderJWT constructor')
+    AddSigningAlgorithm('EthTypedData', EthTypedDataSignerAlgorithm())
+    AddVerifierAlgorithm('EthTypedData', verifyEthTypedDataSignature, validSignatures)
+  }
 
   /** {@inheritdoc @veramo/credential-w3c#AbstractCredentialProvider.matchKeyForType} */
   matchKeyForType(key: IKey): boolean {
@@ -65,7 +75,7 @@ export class CredentialProviderJWT implements AbstractCredentialProvider {
 
   /** {@inheritdoc @veramo/credential-w3c#AbstractCredentialProvider.canIssueCredentialType} */
   canIssueCredentialType(args: ICanIssueCredentialTypeArgs): boolean {
-    return args.proofFormat === 'jwt'
+    return args.proofFormat === 'jwt' || args.proofFormat === 'EthTypedData'
   }
 
   /** {@inheritdoc @veramo/credential-w3c#AbstractCredentialProvider.canVerifyDocumentType */
@@ -105,6 +115,7 @@ export class CredentialProviderJWT implements AbstractCredentialProvider {
     }
 
     const key = pickSigningKey(identifier, keyRef)
+    
 
     debug('Signing VC with', identifier.did)
     let alg = 'ES256K'
@@ -112,6 +123,46 @@ export class CredentialProviderJWT implements AbstractCredentialProvider {
       alg = 'EdDSA'
     } else if (key.type === 'Secp256r1') {
       alg = 'ES256'
+    } else if (key.type === 'Secp256k1') {
+      alg = 'EthTypedData'
+    }
+
+    if (alg === 'EthTypedData') {
+
+      let keyRef = args.keyRef
+
+      const identifier = await context.agent.didManagerGet({ did: issuer })
+  
+      if (!keyRef) {
+        const key = identifier.keys.find(
+          (k) => k.type === 'Secp256k1' && k.meta?.algorithms?.includes('eth_signTypedData'),
+        )
+        if (!key) throw Error('key_not_found: No suitable signing key is known for ' + identifier.did)
+        keyRef = key.kid
+      }
+
+      let chainId
+
+      const extendedKeys = await mapIdentifierKeysToDoc(
+        identifier,
+        'verificationMethod',
+        context,
+        args.resolutionOptions,
+      )
+      const extendedKey = extendedKeys.find((key) => key.kid === keyRef)
+      if (!extendedKey)
+        throw Error('key_not_found: The signing key is not available in the issuer DID document')
+      try {
+        chainId = getChainId(extendedKey.meta.verificationMethod)
+      } catch (e) {
+        chainId = 1
+      }
+      const domain = {
+        chainId,
+        name: 'VerifiableCredential',
+        version: '1',
+      }
+      credential.domain = domain
     }
 
     const signer = this.wrapSigner(context, key, alg)
