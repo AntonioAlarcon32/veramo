@@ -16,7 +16,7 @@
     "@veramo/key-manager": "workspace:^",
     "@veramo/utils": "workspace:^",
     "debug": "^4.3.3",
-    "did-jwt": "^8.0.0",
+    "did-jwt": "link:/Users/antonio/UPC/repos/did-jwt",
     "ethers": "^6.11.1"
   },
   "devDependencies": {

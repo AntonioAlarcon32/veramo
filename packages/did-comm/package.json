@@ -17,8 +17,8 @@
     }
   },
   "dependencies": {
-    "@noble/curves": "^1.4.2",
     "@noble/ciphers": "^0.5.3",
+    "@noble/curves": "^1.4.2",
     "@stablelib/aes-kw": "^2.0.0",
     "@veramo/core-types": "workspace:^",
     "@veramo/kv-store": "workspace:^",
@@ -27,7 +27,7 @@
     "@veramo/utils": "workspace:^",
     "cross-fetch": "^4.0.0",
     "debug": "^4.3.3",
-    "did-jwt": "^8.0.0",
+    "did-jwt": "link:/Users/antonio/UPC/repos/did-jwt",
     "did-resolver": "^4.1.0",
     "uuid": "^9.0.0"
   },

@@ -13,6 +13,7 @@
     "@veramo/core-types": "workspace:^",
     "@veramo/key-manager": "workspace:^",
     "debug": "^4.3.3",
+    "did-jwt-eth-typed-data-signature": "link:/Users/antonio/UPC/repos/did-jwt-eth-typed-data-signature",
     "ethers": "^6.11.1"
   },
   "devDependencies": {

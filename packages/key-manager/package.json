@@ -14,7 +14,7 @@
     "@veramo/core-types": "workspace:^",
     "@veramo/utils": "workspace:^",
     "debug": "^4.3.4",
-    "did-jwt": "^8.0.0",
+    "did-jwt": "link:/Users/antonio/UPC/repos/did-jwt",
     "ethers": "^6.11.1",
     "uint8arrays": "^4.0.6",
     "uuid": "^9.0.0"

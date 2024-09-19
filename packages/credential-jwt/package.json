@@ -12,12 +12,14 @@
     "extract-api": "node ../cli/bin/veramo.js dev extract-api"
   },
   "dependencies": {
-    "@veramo/credential-w3c": "workspace:^",
     "@veramo/core-types": "workspace:^",
+    "@veramo/credential-w3c": "workspace:^",
     "@veramo/utils": "workspace:^",
     "canonicalize": "^2.0.0",
     "debug": "^4.3.3",
-    "did-jwt-vc": "^4.0.0"
+    "did-jwt-eth-typed-data-signature": "link:/Users/antonio/UPC/repos/did-jwt-eth-typed-data-signature",
+    "did-jwt-vc": "link:/Users/antonio/UPC/repos/did-jwt-vc",
+    "eip-712-types-generation": "^0.1.6"
   },
   "devDependencies": {
     "@types/debug": "4.1.8",
