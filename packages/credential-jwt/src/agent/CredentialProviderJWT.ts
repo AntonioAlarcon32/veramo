@@ -59,8 +59,9 @@ export class CredentialProviderJWT implements AbstractCredentialProvider {
 
   constructor() {
     console.log('CredentialProviderJWT constructor')
-    AddSigningAlgorithm('EthTypedData', EthTypedDataSignerAlgorithm())
-    AddVerifierAlgorithm('EthTypedData', verifyEthTypedDataSignature, validSignatures)
+    AddSigningAlgorithm('EthTypedDataSignature', EthTypedDataSignerAlgorithm())
+    AddVerifierAlgorithm('EthTypedDataSignature', verifyEthTypedDataSignature, validSignatures)
+    console.log(validSignatures)
   }
 
   /** {@inheritdoc @veramo/credential-w3c#AbstractCredentialProvider.matchKeyForType} */
@@ -75,7 +76,7 @@ export class CredentialProviderJWT implements AbstractCredentialProvider {
 
   /** {@inheritdoc @veramo/credential-w3c#AbstractCredentialProvider.canIssueCredentialType} */
   canIssueCredentialType(args: ICanIssueCredentialTypeArgs): boolean {
-    return args.proofFormat === 'jwt' || args.proofFormat === 'EthTypedData'
+    return args.proofFormat === 'jwt' || args.proofFormat === 'EthTypedDataSignature'
   }
 
   /** {@inheritdoc @veramo/credential-w3c#AbstractCredentialProvider.canVerifyDocumentType */
@@ -124,10 +125,10 @@ export class CredentialProviderJWT implements AbstractCredentialProvider {
     } else if (key.type === 'Secp256r1') {
       alg = 'ES256'
     } else if (key.type === 'Secp256k1') {
-      alg = 'EthTypedData'
+      alg = 'EthTypedDataSignature'
     }
 
-    if (alg === 'EthTypedData') {
+    if (alg === 'EthTypedDataSignature') {
 
       let keyRef = args.keyRef
 
@@ -301,6 +302,46 @@ export class CredentialProviderJWT implements AbstractCredentialProvider {
       alg = 'EdDSA'
     } else if (key.type === 'Secp256r1') {
       alg = 'ES256'
+    } else if (key.type === 'Secp256k1') {
+      alg = 'EthTypedDataSignature'
+    }
+
+    if (alg === 'EthTypedDataSignature') {
+
+      let keyRef = args.keyRef
+
+      const identifier = await context.agent.didManagerGet({ did: holder })
+  
+      if (!keyRef) {
+        const key = identifier.keys.find(
+          (k) => k.type === 'Secp256k1' && k.meta?.algorithms?.includes('eth_signTypedData'),
+        )
+        if (!key) throw Error('key_not_found: No suitable signing key is known for ' + identifier.did)
+        keyRef = key.kid
+      }
+
+      let chainId
+
+      const extendedKeys = await mapIdentifierKeysToDoc(
+        identifier,
+        'verificationMethod',
+        context,
+        args.resolutionOptions,
+      )
+      const extendedKey = extendedKeys.find((key) => key.kid === keyRef)
+      if (!extendedKey)
+        throw Error('key_not_found: The signing key is not available in the issuer DID document')
+      try {
+        chainId = getChainId(extendedKey.meta.verificationMethod)
+      } catch (e) {
+        chainId = 1
+      }
+      const domain = {
+        chainId,
+        name: 'VerifiablePresentation',
+        version: '1',
+      }
+      presentation.domain = domain
     }
 
     const signer = this.wrapSigner(context, key, alg)

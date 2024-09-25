@@ -85,7 +85,7 @@ export class Web3KeyManagementSystem extends AbstractKeyManagementSystem {
     if (algorithm) {
       if (algorithm === 'eth_signMessage') {
         return await this.eth_signMessage(keyRef, data)
-      } else if (['eth_signTypedData', 'EthereumEip712Signature2021', 'EthTypedData'].includes(algorithm)) {
+      } else if (['eth_signTypedData', 'EthereumEip712Signature2021', 'EthTypedDataSignature'].includes(algorithm)) {
         return await this.eth_signTypedData(keyRef, data, algorithm)
       }
     }
@@ -99,11 +99,10 @@ export class Web3KeyManagementSystem extends AbstractKeyManagementSystem {
   private async eth_signTypedData(keyRef: Pick<IKey, 'kid'>, data: Uint8Array, algorithm?: string) {
     let msg, msgDomain, msgTypes, msgPrimaryType
     let serializedData = toUtf8String(data)
-    if (algorithm === 'EthTypedData') {
+    if (algorithm === 'EthTypedDataSignature') {
         const { signer } = await this.getAccountAndSignerByKeyRef(keyRef)
         //@ts-expect-error
         const eip712Web3Signer  = ethTypedDataSigner(signer)
-        // const signature = await signer.signTypedData(msgDomain, msgTypes, msg)
         const signature = await eip712Web3Signer(data)
         if (typeof signature !== 'string') {
           throw Error(`invalid_signature: ${signature}`)
