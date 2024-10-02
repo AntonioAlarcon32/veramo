@@ -17,8 +17,8 @@
     "@veramo/utils": "workspace:^",
     "canonicalize": "^2.0.0",
     "debug": "^4.3.3",
-    "did-jwt": "link:/Users/antonio/UPC/repos/did-jwt",
-    "did-jwt-vc": "link:/Users/antonio/UPC/repos/did-jwt-vc",
+    "did-jwt": "link:../../../did-jwt",
+    "did-jwt-vc": "link:../../../did-jwt-vc",
     "did-resolver": "^4.1.0",
     "uuid": "^9.0.0"
   },

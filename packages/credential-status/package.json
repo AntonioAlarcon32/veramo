@@ -13,7 +13,7 @@
     "@veramo/core-types": "workspace:^",
     "@veramo/utils": "workspace:^",
     "credential-status": "^3.0.0",
-    "did-jwt": "link:/Users/antonio/UPC/repos/did-jwt",
+    "did-jwt": "link:../../../did-jwt",
     "did-resolver": "^4.1.0"
   },
   "devDependencies": {

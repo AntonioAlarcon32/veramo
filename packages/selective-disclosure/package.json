@@ -21,7 +21,7 @@
     "@veramo/message-handler": "workspace:^",
     "@veramo/utils": "workspace:^",
     "debug": "^4.3.3",
-    "did-jwt": "link:/Users/antonio/UPC/repos/did-jwt",
+    "did-jwt": "link:../../../did-jwt",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

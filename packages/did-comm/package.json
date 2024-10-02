@@ -27,7 +27,7 @@
     "@veramo/utils": "workspace:^",
     "cross-fetch": "^4.0.0",
     "debug": "^4.3.3",
-    "did-jwt": "link:/Users/antonio/UPC/repos/did-jwt",
+    "did-jwt": "link:../../../did-jwt",
     "did-resolver": "^4.1.0",
     "uuid": "^9.0.0"
   },

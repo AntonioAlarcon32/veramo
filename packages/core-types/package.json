@@ -34,7 +34,7 @@
   "dependencies": {
     "credential-status": "^3.0.0",
     "debug": "^4.3.3",
-    "did-jwt-vc": "link:/Users/antonio/UPC/repos/did-jwt-vc",
+    "did-jwt-vc": "link:../../../did-jwt-vc",
     "did-resolver": "^4.1.0"
   },
   "devDependencies": {

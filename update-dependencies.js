@@ -3,7 +3,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const packagesDir = path.join(__dirname, 'packages');
-const newDependency = '/Users/antonio/UPC/repos/did-jwt-vc'; // Update this path
+const newDependency = '../../../did-jwt-vc'; // Update this path
 
 function updatePackageJson(packagePath) {
   const packageJsonPath = path.join(packagePath, 'package.json');
