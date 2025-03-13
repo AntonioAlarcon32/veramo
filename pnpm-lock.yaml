@@ -463,12 +463,15 @@ importers:
       debug:
         specifier: ^4.3.3
         version: 4.3.4
+      did-jwt:
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       did-jwt-eth-typed-data-signature:
-        specifier: link:../../../did-jwt-eth-typed-data-signature
-        version: link:../../../did-jwt-eth-typed-data-signature
+        specifier: github:AntonioAlarcon32/did-jwt-eth-typed-data-signature
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt-eth-typed-data-signature/tar.gz/61889b20d7992f8b02756db193d14a642b8aa838(bufferutil@4.0.7)(utf-8-validate@6.0.3)
       did-jwt-vc:
-        specifier: link:../../../did-jwt-vc
-        version: link:../../../did-jwt-vc
+        specifier: github:AntonioAlarcon32/did-jwt-vc
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4
       eip-712-types-generation:
         specifier: ^0.1.6
         version: 0.1.6
@@ -581,21 +584,17 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt:
-        specifier: link:../../../did-jwt
-        version: link:../../../did-jwt
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       did-jwt-vc:
-        specifier: link:../../../did-jwt-vc
-        version: link:../../../did-jwt-vc
+        specifier: github:AntonioAlarcon32/did-jwt-vc
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4
       did-resolver:
         specifier: ^4.1.0
         version: 4.1.0
       uuid:
         specifier: ^9.0.0
         version: 9.0.0
-    optionalDependencies:
-      '@veramo/credential-ld':
-        specifier: ^6.0.0
-        version: 6.0.0(bufferutil@4.0.7)(encoding@0.1.13)(utf-8-validate@5.0.7)
     devDependencies:
       '@types/debug':
         specifier: 4.1.8
@@ -606,6 +605,10 @@ importers:
       typescript:
         specifier: 5.3.3
         version: 5.3.3
+    optionalDependencies:
+      '@veramo/credential-ld':
+        specifier: ^6.0.0
+        version: 6.0.0(bufferutil@4.0.7)(encoding@0.1.13)(utf-8-validate@5.0.7)
 
   packages/data-store:
     dependencies:
@@ -628,8 +631,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt-vc:
-        specifier: link:../../../did-jwt-vc
-        version: link:../../../did-jwt-vc
+        specifier: github:AntonioAlarcon32/did-jwt-vc
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4
       typeorm:
         specifier: ^0.3.17
         version: 0.3.17(pg@8.11.3)(sqlite3@5.1.6(encoding@0.1.13))(ts-node@10.9.2(@types/node@20.11.19)(typescript@5.3.3))
@@ -671,8 +674,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt-vc:
-        specifier: link:../../../did-jwt-vc
-        version: link:../../../did-jwt-vc
+        specifier: github:AntonioAlarcon32/did-jwt-vc
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4
       uuid:
         specifier: ^9.0.0
         version: 9.0.0
@@ -723,8 +726,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt:
-        specifier: link:../../../did-jwt
-        version: link:../../../did-jwt
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       did-resolver:
         specifier: ^4.1.0
         version: 4.1.0
@@ -770,8 +773,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt:
-        specifier: link:../../../did-jwt
-        version: link:../../../did-jwt
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       did-resolver:
         specifier: ^4.1.0
         version: 4.1.0
@@ -1074,8 +1077,8 @@ importers:
         specifier: ^4.3.4
         version: 4.3.4
       did-jwt:
-        specifier: link:../../../did-jwt
-        version: link:../../../did-jwt
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       ethers:
         specifier: ^6.11.1
         version: 6.11.1(bufferutil@4.0.7)(utf-8-validate@5.0.7)
@@ -1117,8 +1120,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt:
-        specifier: link:../../../did-jwt
-        version: link:../../../did-jwt
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       ethers:
         specifier: ^6.11.1
         version: 6.11.1(bufferutil@4.0.7)(utf-8-validate@5.0.7)
@@ -1142,8 +1145,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt-eth-typed-data-signature:
-        specifier: link:/Users/antonio/UPC/repos/did-jwt-eth-typed-data-signature
-        version: link:../../../did-jwt-eth-typed-data-signature
+        specifier: github:AntonioAlarcon32/did-jwt-eth-typed-data-signature
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt-eth-typed-data-signature/tar.gz/61889b20d7992f8b02756db193d14a642b8aa838(bufferutil@4.0.7)(utf-8-validate@5.0.7)
       ethers:
         specifier: ^6.11.1
         version: 6.11.1(bufferutil@4.0.7)(utf-8-validate@5.0.7)
@@ -1349,8 +1352,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt:
-        specifier: link:../../../did-jwt
-        version: link:../../../did-jwt
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       uuid:
         specifier: ^9.0.0
         version: 9.0.0
@@ -1629,11 +1632,11 @@ importers:
         specifier: ^4.3.3
         version: 4.3.4
       did-jwt:
-        specifier: link:../../../did-jwt
-        version: link:../../../did-jwt
+        specifier: github:AntonioAlarcon32/did-jwt#dist
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
       did-jwt-vc:
-        specifier: link:../../../did-jwt-vc
-        version: link:../../../did-jwt-vc
+        specifier: github:AntonioAlarcon32/did-jwt-vc
+        version: https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4
       did-resolver:
         specifier: ^4.1.0
         version: 4.1.0
@@ -3541,6 +3544,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
+  '@juanelas/solidity-types-from-json@1.0.1':
+    resolution: {integrity: sha512-zlADdmgzvgqluzLpf71IeyLYihuIffLE81hA0OhUQ8XrDSP440oN0NewGGPV5B08Lcqv7lXenkEgyVMAEjSr0Q==}
+
   '@keyv/compress-brotli@1.1.4':
     resolution: {integrity: sha512-xOW91zI1t3ZIdWf3GFKJoQR6RfyqOnECvIs1Ra5nQVCPa4RAW3A6ZxMj8B7zKYerUNyIVLn77jK5rheR75za0A==}
     engines: {node: '>= 12'}
@@ -4657,6 +4663,9 @@ packages:
   '@types/koa@2.13.5':
     resolution: {integrity: sha512-HSUOdzKz3by4fnqagwthW/1w/yJspTgppyyalPVbgZf8jQWvdIXcVW5h2DGtw4zYntOaeRGx49r1hxoPWrD4aA==}
 
+  '@types/lodash@4.17.16':
+    resolution: {integrity: sha512-HX7Em5NYQAXKW+1T+FiuG27NGwzJfCX3s1GjOa7ujxZa52kjJLOr4FUxT+giF6Tgxv1e+/czV/iTtBw27WTU9g==}
+
   '@types/lru-cache@5.1.1':
     resolution: {integrity: sha512-ssE3Vlrys7sdIzs5LOxCzTVMsU7i9oa/IaW92wF32JFb3CVczqOkru2xspuKczHEbG3nvmPY7IFqVmGGHdNbYw==}
 
@@ -4705,6 +4714,9 @@ packages:
 
   '@types/passport@1.0.12':
     resolution: {integrity: sha512-QFdJ2TiAEoXfEQSNDISJR1Tm51I78CymqcBa8imbjo6dNNu+l2huDxxbDEIoFIwOSKMkOfHEikyDuZ38WwWsmw==}
+
+  '@types/pluralize@0.0.33':
+    resolution: {integrity: sha512-JOqsl+ZoCpP4e8TDke9W79FDcSgPAR0l6pixx2JHkhnRjvShyYiAYw2LVsnA7K08Y6DeOnaU6ujmENO4os/cYg==}
 
   '@types/prettier@2.7.2':
     resolution: {integrity: sha512-KufADq8uQqo1pYKVIYzfKbJfBAc0sOeXqGbFaSpv8MRmC/zXgowNZmFcbngndGk922QDmOASEXUZCaY48gs4cg==}
@@ -4954,6 +4966,7 @@ packages:
   '@xmldom/xmldom@0.7.13':
     resolution: {integrity: sha512-lm2GW5PkosIzccsaZIz7tp8cPADSIlIHWDFTR1N0SzfinhhYgeIQjFMz4rYzanCScr3DqQLeomUDArp6MWKm+g==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version is no longer supported, please update to at least 0.8.*
 
   '@xmldom/xmldom@0.8.10':
     resolution: {integrity: sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==}
@@ -5002,6 +5015,7 @@ packages:
   abstract-leveldown@7.2.0:
     resolution: {integrity: sha512-DnhQwcFEaYsvYDnACLZhMmCWd3rkOeEvglpa4q5i/5Jlm3UIsWaxVzuXvDLFCSCWRO3yy2/+V/G7FusFgejnfQ==}
     engines: {node: '>=10'}
+    deprecated: Superseded by abstract-level (https://github.com/Level/community#faq)
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -5015,6 +5029,7 @@ packages:
 
   acorn-import-assertions@1.8.0:
     resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
+    deprecated: package has been renamed to acorn-import-attributes
     peerDependencies:
       acorn: ^8
 
@@ -6631,8 +6646,17 @@ packages:
   devtools-protocol@0.0.1249869:
     resolution: {integrity: sha512-Ctp4hInA0BEavlUoRy9mhGq0i+JSo/AwVyX2EFgZmV1kYB+Zq+EMBAn52QWu6FbRr10hRb6pBl420upbp4++vg==}
 
+  did-jwt-eth-typed-data-signature@https://codeload.github.com/AntonioAlarcon32/did-jwt-eth-typed-data-signature/tar.gz/61889b20d7992f8b02756db193d14a642b8aa838:
+    resolution: {tarball: https://codeload.github.com/AntonioAlarcon32/did-jwt-eth-typed-data-signature/tar.gz/61889b20d7992f8b02756db193d14a642b8aa838}
+    version: 0.9.5
+
   did-jwt-vc@4.0.4:
     resolution: {integrity: sha512-O/VSW+pux25+bERGQ1Z+LNv8z8gIy++yL8yjspxNZHCLjdmCelZz3hjuIpHlixhBCFP2YyTOQqGg8QeIMRwN9Q==}
+    engines: {node: '>=18'}
+
+  did-jwt-vc@https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4:
+    resolution: {tarball: https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4}
+    version: 4.0.4
     engines: {node: '>=18'}
 
   did-jwt@7.4.2:
@@ -6640,6 +6664,14 @@ packages:
 
   did-jwt@8.0.4:
     resolution: {integrity: sha512-KPtG7H+8GgKGMiDqFvOdNy5BBN3hpA+8xV7VygEnpst5oPIqjvcH3rTtnPF55a8bOxIzE2PudKGIXIQhekv7WA==}
+
+  did-jwt@git+https://git@github.com:AntonioAlarcon32/did-jwt.git#b977e8e7049a81747ac2598e3898e0115d388c1f:
+    resolution: {commit: b977e8e7049a81747ac2598e3898e0115d388c1f, repo: git@github.com:AntonioAlarcon32/did-jwt.git, type: git}
+    version: 8.0.4
+
+  did-jwt@https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f:
+    resolution: {tarball: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f}
+    version: 8.0.4
 
   did-resolver@4.1.0:
     resolution: {integrity: sha512-S6fWHvCXkZg2IhS4RcVHxwuyVejPR7c+a4Go0xbQ9ps5kILa8viiYQgrM4gfTyeTjJ0ekgJH9gk/BawTpmkbZA==}
@@ -7066,6 +7098,7 @@ packages:
   eslint@8.56.0:
     resolution: {integrity: sha512-Go19xM6T9puCOWntie1/P997aXxFsOi37JIHRWI514Hc6ZnaHGKY9xFhrU65RT6CcBEzZoGG1e6Nq+DT04ZtZQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -7230,6 +7263,7 @@ packages:
 
   expo-random@13.4.0:
     resolution: {integrity: sha512-Z/Bbd+1MbkK8/4ukspgA3oMlcu0q3YTCu//7q2xHwy35huN6WCv4/Uw2OGyCiOQjAbU02zwq6swA+VgVmJRCEw==}
+    deprecated: This package is now deprecated in favor of expo-crypto, which provides the same functionality. To migrate, replace all imports from expo-random with imports from expo-crypto.
     peerDependencies:
       expo: '*'
 
@@ -9071,6 +9105,7 @@ packages:
   level-concat-iterator@3.1.0:
     resolution: {integrity: sha512-BWRCMHBxbIqPxJ8vHOvKUsaO0v1sLYZtjN3K2iZJsRBYtp+ONsY6Jfi6hy9K3+zolgQRryhIn2NRZjZnWJ9NmQ==}
     engines: {node: '>=10'}
+    deprecated: Superseded by abstract-level (https://github.com/Level/community#faq)
 
   level-supports@2.1.0:
     resolution: {integrity: sha512-E486g1NCjW5cF78KGPrMDRBYzPuueMZ6VBXHT6gC7A8UYWGiM14fGgp+s/L1oFfDWSPV/+SFkYCmZ0SiESkRKA==}
@@ -9220,9 +9255,11 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.isequal@4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
 
   lodash.ismatch@4.4.0:
     resolution: {integrity: sha512-fPMfXjGQEV9Xsq/8MTSgUf255gawYRbjwMyDbcvDhXgV7enSZA0hynz6vMPnpAb5iONEzBHBPsT+0zes5Z301g==}
@@ -10556,6 +10593,10 @@ packages:
   plist@3.1.0:
     resolution: {integrity: sha512-uysumyrvkUX0rX/dEVqt8gC3sTBzd4zoWfLeS29nb53imdaXVvLINYXTI2GNqzaMuvacNx4uJQ8+b3zXR0pkgQ==}
     engines: {node: '>=10.4.0'}
+
+  pluralize@8.0.0:
+    resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
+    engines: {node: '>=4'}
 
   pngjs@3.4.0:
     resolution: {integrity: sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==}
@@ -12170,12 +12211,15 @@ packages:
 
   sudo-prompt@8.2.5:
     resolution: {integrity: sha512-rlBo3HU/1zAJUrkY6jNxDOC9eVYliG6nS4JA8u8KAshITd07tafMc/Br7xQwCSseXwJ2iCcHCE8SNWX3q8Z+kw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   sudo-prompt@9.1.1:
     resolution: {integrity: sha512-es33J1g2HjMpyAhz8lOR+ICmXXAqTuKbuXuUWLhOLew20oN9oUCgCJx615U/v7aioZg7IX5lIh9x34vwneu4pA==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   sudo-prompt@9.2.1:
     resolution: {integrity: sha512-Mu7R0g4ig9TUuGSxJavny5Rv0egCEtpZRNMrZaYS1vxkiIxGiGUwoezU3LazIQ+KE04hTrTfNPgxU5gzi7F5Pw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   superstruct@1.0.3:
     resolution: {integrity: sha512-8iTn3oSS8nRGn+C2pgXSKPI3jmpm6FExNazNpjvqS6ZUJQCej3PUXEKM8NjHBOs54ExM+LPW/FBRhymrdcCiSg==}
@@ -12680,6 +12724,9 @@ packages:
 
   uint8arrays@5.0.2:
     resolution: {integrity: sha512-S0GaeR+orZt7LaqzTRs4ZP8QqzAauJ+0d4xvP2lJTA99jIkKsE2FgDs4tGF/K/z5O9I/2W5Yvrh7IuqNeYH+0Q==}
+
+  uint8arrays@5.1.0:
+    resolution: {integrity: sha512-vA6nFepEmlSKkMBnLBaUMVvAC4G3CTmO58C12y4sq6WPDOR7mOFYOi7GlrQ4djeSbP6JG9Pv9tJDM97PedRSww==}
 
   unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
@@ -17513,8 +17560,8 @@ snapshots:
   '@jest/types@29.6.3':
     dependencies:
       '@jest/schemas': 29.6.3
-      '@types/istanbul-lib-coverage': 2.0.4
-      '@types/istanbul-reports': 3.0.1
+      '@types/istanbul-lib-coverage': 2.0.6
+      '@types/istanbul-reports': 3.0.4
       '@types/node': 20.11.19
       '@types/yargs': 17.0.24
       chalk: 4.1.2
@@ -17559,6 +17606,13 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  '@juanelas/solidity-types-from-json@1.0.1':
+    dependencies:
+      '@types/lodash': 4.17.16
+      '@types/pluralize': 0.0.33
+      lodash: 4.17.21
+      pluralize: 8.0.0
 
   '@keyv/compress-brotli@1.1.4':
     dependencies:
@@ -19264,6 +19318,8 @@ snapshots:
       '@types/koa-compose': 3.2.5
       '@types/node': 20.11.19
 
+  '@types/lodash@4.17.16': {}
+
   '@types/lru-cache@5.1.1': {}
 
   '@types/mime@1.3.2': {}
@@ -19307,6 +19363,8 @@ snapshots:
   '@types/passport@1.0.12':
     dependencies:
       '@types/express': 4.17.21
+
+  '@types/pluralize@0.0.33': {}
 
   '@types/prettier@2.7.2': {}
 
@@ -19405,7 +19463,7 @@ snapshots:
 
   '@types/yargs@17.0.24':
     dependencies:
-      '@types/yargs-parser': 21.0.0
+      '@types/yargs-parser': 21.0.3
 
   '@types/yauzl@2.10.3':
     dependencies:
@@ -21732,11 +21790,36 @@ snapshots:
 
   devtools-protocol@0.0.1249869: {}
 
+  did-jwt-eth-typed-data-signature@https://codeload.github.com/AntonioAlarcon32/did-jwt-eth-typed-data-signature/tar.gz/61889b20d7992f8b02756db193d14a642b8aa838(bufferutil@4.0.7)(utf-8-validate@5.0.7):
+    dependencies:
+      '@juanelas/solidity-types-from-json': 1.0.1
+      did-jwt: git+https://git@github.com:AntonioAlarcon32/did-jwt.git#b977e8e7049a81747ac2598e3898e0115d388c1f
+      ethers: 6.11.1(bufferutil@4.0.7)(utf-8-validate@5.0.7)
+      uint8arrays: 5.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  did-jwt-eth-typed-data-signature@https://codeload.github.com/AntonioAlarcon32/did-jwt-eth-typed-data-signature/tar.gz/61889b20d7992f8b02756db193d14a642b8aa838(bufferutil@4.0.7)(utf-8-validate@6.0.3):
+    dependencies:
+      '@juanelas/solidity-types-from-json': 1.0.1
+      did-jwt: git+https://git@github.com:AntonioAlarcon32/did-jwt.git#b977e8e7049a81747ac2598e3898e0115d388c1f
+      ethers: 6.11.1(bufferutil@4.0.7)(utf-8-validate@6.0.3)
+      uint8arrays: 5.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   did-jwt-vc@4.0.4:
     dependencies:
       did-jwt: 8.0.4
       did-resolver: 4.1.0
     optional: true
+
+  did-jwt-vc@https://codeload.github.com/AntonioAlarcon32/did-jwt-vc/tar.gz/8fa2529767545c8add76a0f9c511466f405877a4:
+    dependencies:
+      did-jwt: https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f
+      did-resolver: 4.1.0
 
   did-jwt@7.4.2:
     dependencies:
@@ -21750,6 +21833,30 @@ snapshots:
       uint8arrays: 4.0.6
 
   did-jwt@8.0.4:
+    dependencies:
+      '@noble/ciphers': 0.5.3
+      '@noble/curves': 1.4.2
+      '@noble/hashes': 1.4.0
+      '@scure/base': 1.1.3
+      canonicalize: 2.0.0
+      did-resolver: 4.1.0
+      multibase: 4.0.6
+      multiformats: 9.9.0
+      uint8arrays: 3.1.1
+
+  did-jwt@git+https://git@github.com:AntonioAlarcon32/did-jwt.git#b977e8e7049a81747ac2598e3898e0115d388c1f:
+    dependencies:
+      '@noble/ciphers': 0.5.3
+      '@noble/curves': 1.4.2
+      '@noble/hashes': 1.4.0
+      '@scure/base': 1.1.3
+      canonicalize: 2.0.0
+      did-resolver: 4.1.0
+      multibase: 4.0.6
+      multiformats: 9.9.0
+      uint8arrays: 3.1.1
+
+  did-jwt@https://codeload.github.com/AntonioAlarcon32/did-jwt/tar.gz/b977e8e7049a81747ac2598e3898e0115d388c1f:
     dependencies:
       '@noble/ciphers': 0.5.3
       '@noble/curves': 1.4.2
@@ -23298,7 +23405,7 @@ snapshots:
 
   gopd@1.0.1:
     dependencies:
-      get-intrinsic: 1.2.1
+      get-intrinsic: 1.2.4
 
   graceful-fs@4.2.10: {}
 
@@ -24481,7 +24588,7 @@ snapshots:
 
   jest-message-util@29.7.0:
     dependencies:
-      '@babel/code-frame': 7.22.5
+      '@babel/code-frame': 7.23.5
       '@jest/types': 29.6.3
       '@types/stack-utils': 2.0.1
       chalk: 4.1.2
@@ -24755,7 +24862,7 @@ snapshots:
       '@jest/types': 29.6.3
       '@types/node': 20.11.19
       chalk: 4.1.2
-      ci-info: 3.8.0
+      ci-info: 3.9.0
       graceful-fs: 4.2.11
       picomatch: 2.3.1
 
@@ -26881,6 +26988,8 @@ snapshots:
       '@xmldom/xmldom': 0.8.10
       base64-js: 1.5.1
       xmlbuilder: 15.1.1
+
+  pluralize@8.0.0: {}
 
   pngjs@3.4.0: {}
 
@@ -29340,6 +29449,10 @@ snapshots:
       multiformats: 12.0.1
 
   uint8arrays@5.0.2:
+    dependencies:
+      multiformats: 13.1.0
+
+  uint8arrays@5.1.0:
     dependencies:
       multiformats: 13.1.0
 

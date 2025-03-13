@@ -13,7 +13,7 @@
     "@veramo/core-types": "workspace:^",
     "@veramo/message-handler": "workspace:^",
     "debug": "^4.3.3",
-    "did-jwt": "link:../../../did-jwt",
+    "did-jwt": "github:AntonioAlarcon32/did-jwt#dist",
     "did-resolver": "^4.1.0"
   },
   "devDependencies": {

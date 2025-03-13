@@ -27,7 +27,7 @@
     "@veramo/utils": "workspace:^",
     "cross-fetch": "^4.0.0",
     "debug": "^4.3.3",
-    "did-jwt": "link:../../../did-jwt",
+    "did-jwt": "github:AntonioAlarcon32/did-jwt#dist",
     "did-resolver": "^4.1.0",
     "uuid": "^9.0.0"
   },

@@ -101,7 +101,6 @@ export class Web3KeyManagementSystem extends AbstractKeyManagementSystem {
     let serializedData = toUtf8String(data)
     if (algorithm === 'EthTypedDataSignature') {
         const { signer } = await this.getAccountAndSignerByKeyRef(keyRef)
-        //@ts-expect-error
         const eip712Web3Signer  = ethTypedDataSigner(signer)
         const signature = await eip712Web3Signer(data)
         if (typeof signature !== 'string') {
